@@ -15,8 +15,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    private static final String KEY = "0";
+
     static int count = 0;
-    private static final String KEY = "Number";
 
     public void increment(View view) {
         count++;
@@ -30,9 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
-        TextView textView = findViewById(R.id.textView);
         outState.putInt(KEY, count);
-
         super.onSaveInstanceState(outState);
     }
 
